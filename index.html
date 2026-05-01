@@ -27,22 +27,31 @@
 </head>
 <body>
     <h1>🐄</h1>
-    <p id="version">v3</p>
+    <p id="version">v4</p>
     <audio id="lyd">
         <source src="Ko.m4a" type="audio/mp4">
     </audio>
     <script>
     var lyd = document.getElementById("lyd");
+    
+    // Forsøg 1: Afspil med det samme
+    lyd.play().catch(() => {});
+    
+    // Forsøg 2: Afspil efter 100ms
+    setTimeout(() => { lyd.play().catch(() => {}); }, 100);
+    
+    // Forsøg 3: Afspil når siden er fuldt indlæst
     window.addEventListener("load", function() {
-        lyd.play().catch(() => {
-            document.addEventListener("touchstart", function() {
-                lyd.play();
-            }, { once: true });
-            document.addEventListener("click", function() {
-                lyd.play();
-            }, { once: true });
-        });
+        lyd.play().catch(() => {});
     });
+    
+    // Fallback: Afspil ved første interaktion
+    document.addEventListener("touchstart", function() {
+        lyd.play();
+    }, { once: true });
+    document.addEventListener("click", function() {
+        lyd.play();
+    }, { once: true });
 </script>
 </body>
 </html>
