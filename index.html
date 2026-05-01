@@ -6,6 +6,7 @@
     <style>
         body {
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             height: 100vh;
@@ -15,14 +16,19 @@
         }
         h1 {
             font-size: 5em;
-            text-align: center;
         }
     </style>
 </head>
 <body>
     <h1>🐄</h1>
-    <audio autoplay>
+    <audio id="lyd">
         <source src="Ko.m4a" type="audio/mp4">
     </audio>
+    <script>
+        document.addEventListener("click", function() {
+            document.getElementById("lyd").play();
+        }, { once: true });
+        document.getElementById("lyd").play().catch(() => {});
+    </script>
 </body>
 </html>
