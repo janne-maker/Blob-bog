@@ -16,20 +16,25 @@
         h1 {
             font-size: 5em;
         }
+        #version {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            font-size: 0.8em;
+            color: #ccc;
+        }
     </style>
 </head>
 <body>
     <h1>🐄</h1>
+    <p id="version">v2</p>
     <audio id="lyd">
         <source src="Ko.m4a" type="audio/mp4">
     </audio>
     <script>
         var lyd = document.getElementById("lyd");
-        
-        // Prøv at afspille automatisk når siden loader
         window.addEventListener("load", function() {
             lyd.play().catch(() => {
-                // Hvis det fejler, afspil ved første touch
                 document.addEventListener("touchstart", function() {
                     lyd.play();
                 }, { once: true });
