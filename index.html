@@ -9,6 +9,7 @@
             padding: 0;
             background-color: #fff9f0;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             height: 100vh;
@@ -27,24 +28,18 @@
 </head>
 <body>
     <h1>🐄</h1>
-    <p id="version">v8</p>
-    <audio id="lyd" autoplay muted>
+    <p id="version">v6</p>
+    <audio id="lyd">
         <source src="Ko.m4a" type="audio/mp4">
     </audio>
     <script>
         var lyd = document.getElementById("lyd");
-        lyd.play().then(function() {
-            lyd.muted = false;
-        }).catch(function() {
-            document.addEventListener("touchstart", function() {
-                lyd.muted = false;
-                lyd.play();
-            }, { once: true });
-            document.addEventListener("click", function() {
-                lyd.muted = false;
-                lyd.play();
-            }, { once: true });
-        });
+        document.addEventListener("touchstart", function() {
+            lyd.play();
+        }, { once: true });
+        document.addEventListener("click", function() {
+            lyd.play();
+        }, { once: true });
     </script>
 </body>
 </html>
