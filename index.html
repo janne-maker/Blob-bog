@@ -27,10 +27,12 @@
 </head>
 <body>
     <h1>🐄</h1>
-    <p id="version">v6</p>
-    <audio id="lyd" autoplay muted>
+    <p id="version">v7</p>
+    <audio controls autoplay>
+        <source src="Ko.ogg" type="audio/ogg">
         <source src="Ko.m4a" type="audio/mp4">
-    </audio>
+        Your browser does not support the audio element.
+    </audio> 
     <script>
         var lyd = document.getElementById("lyd");
         lyd.addEventListener("play", function() {
