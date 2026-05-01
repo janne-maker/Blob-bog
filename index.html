@@ -32,14 +32,17 @@
         <source src="Ko.m4a" type="audio/mp4">
     </audio>
     <script>
-        var lyd = document.getElementById("lyd");
-        window.addEventListener("load", function() {
-            lyd.play().catch(() => {
-                document.addEventListener("touchstart", function() {
-                    lyd.play();
-                }, { once: true });
-            });
+    var lyd = document.getElementById("lyd");
+    window.addEventListener("load", function() {
+        lyd.play().catch(() => {
+            document.addEventListener("touchstart", function() {
+                lyd.play();
+            }, { once: true });
+            document.addEventListener("click", function() {
+                lyd.play();
+            }, { once: true });
         });
-    </script>
+    });
+</script>
 </body>
 </html>
