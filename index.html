@@ -6,7 +6,6 @@
     <style>
         body {
             display: flex;
-            flex-direction: column;
             justify-content: center;
             align-items: center;
             height: 100vh;
@@ -16,22 +15,13 @@
         }
         h1 {
             font-size: 5em;
-            margin-bottom: 20px;
-        }
-        button {
-            font-size: 1.5em;
-            padding: 15px 30px;
-            border-radius: 20px;
-            border: none;
-            background-color: #f4a261;
-            cursor: pointer;
+            text-align: center;
         }
     </style>
 </head>
 <body>
     <h1>🐄</h1>
-    <button onclick="document.getElementById('lyd').play()">Tryk her!</button>
-    <audio id="lyd">
+    <audio autoplay>
         <source src="Ko.m4a" type="audio/mp4">
     </audio>
 </body>
