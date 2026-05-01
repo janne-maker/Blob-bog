@@ -27,25 +27,24 @@
 </head>
 <body>
     <h1>🐄</h1>
-    <p id="version">v7</p>
-    <audio controls autoplay>
-        <source src="Ko.ogg" type="audio/ogg">
+    <p id="version">v8</p>
+    <audio id="lyd" autoplay muted>
         <source src="Ko.m4a" type="audio/mp4">
-        Your browser does not support the audio element.
-    </audio> 
+    </audio>
     <script>
         var lyd = document.getElementById("lyd");
-        lyd.addEventListener("play", function() {
+        lyd.play().then(function() {
             lyd.muted = false;
+        }).catch(function() {
+            document.addEventListener("touchstart", function() {
+                lyd.muted = false;
+                lyd.play();
+            }, { once: true });
+            document.addEventListener("click", function() {
+                lyd.muted = false;
+                lyd.play();
+            }, { once: true });
         });
-
-        // Fallback: Afspil ved første interaktion
-        document.addEventListener("touchstart", function() {
-            lyd.play();
-        }, { once: true });
-        document.addEventListener("click", function() {
-            lyd.play();
-        }, { once: true });
     </script>
 </body>
 </html>
