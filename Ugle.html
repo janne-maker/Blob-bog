@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Hugo møder en ugle</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #fff9f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        img {
+            max-width: 80%;
+            max-height: 80vh;
+        }
+    </style>
+</head>
+<body>
+    <img src="Ugle.png" alt="ugle">
+    <audio id="lyd">
+        <source src="Ugle.m4a" type="audio/mp4">
+    </audio>
+    <script>
+        var lyd = document.getElementById("lyd");
+        document.addEventListener("touchstart", function() {
+            lyd.play();
+        }, { once: true });
+        document.addEventListener("click", function() {
+            lyd.play();
+        }, { once: true });
+    </script>
+</body>
+</html>
